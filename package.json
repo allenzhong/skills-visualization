@@ -1,0 +1,27 @@
+{
+  "name": "skills-visualization",
+  "version": "1.0.0",
+  "description": "Visualize skills map",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack app/index.js dist/bundle.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://allenzhong@github.com/allenzhong/skills-visualization.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/allenzhong/skills-visualization/issues"
+  },
+  "homepage": "https://github.com/allenzhong/skills-visualization#readme",
+  "dependencies": {
+    "d3": "^4.7.4",
+    "lodash": "^4.17.4"
+  },
+  "devDependencies": {
+    "webpack": "^2.3.3"
+  }
+}
