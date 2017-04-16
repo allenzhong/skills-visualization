@@ -15,7 +15,6 @@ class SkillsMap extends React.Component {
     this.drawSunburst();
   }
 
- 
   drawSunburst() {
     const width = 960;
     const height = 700;
@@ -42,7 +41,7 @@ class SkillsMap extends React.Component {
     var svg = d3.select("#skillmap").append("svg")
         .attr("width", width)
         .attr("height", height)
-      .append("g")
+        .append("g")
         .attr("transform", "translate(" + width / 2 + "," + (height / 2) + ")");
 
     d3.json("flare.json", function(error, root) {
@@ -52,15 +51,14 @@ class SkillsMap extends React.Component {
       root.sum(function(d) { return d.size; });
       svg.selectAll("path")
           .data(partition(root).descendants())
-        .enter().append("path")
+          .enter().append("path")
           .attr("d", arc)
           .style("fill", function(d) { return color((d.children ? d : d.parent).data.name); })
           // .on("click", click)
-        .append("title")
+          .append("title")
           .text(function(d) { return d.data.name + "\n" + formatNumber(d.value); });
     });      
   }
-
 
   render() {
     return (
